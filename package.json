@@ -1,0 +1,26 @@
+{
+  "name": "cw-user-agent",
+  "version": "0.1.0",
+  "description": "User agent parser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://armorik83@github.com/crescware/cw-user-agent.git"
+  },
+  "keywords": [
+    "ua",
+    "user",
+    "agent",
+    "device",
+    "mobile"
+  ],
+  "author": "OKUNOKENTARO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crescware/cw-user-agent/issues"
+  },
+  "homepage": "https://github.com/crescware/cw-user-agent#readme"
+}
