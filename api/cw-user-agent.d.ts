@@ -8,12 +8,14 @@ declare module cwua {
     userAgent: string;
     device: string;
     os: OsInfo;
+    engine: EngineInfo;
+    browser: BrowserInfo;
   }
 
   interface OsInfo {
     name: string;
     version: string;
-    major?: number;
+    major: number;
     minor?: number;
     patch?: number;
   }
@@ -21,6 +23,12 @@ declare module cwua {
   interface EngineInfo {
     name: string;
     version: string;
+  }
+
+  interface BrowserInfo {
+    name: string;
+    version: string;
+    major: number;
   }
 }
 

@@ -82,6 +82,13 @@ class DeviceInfo {
   get engine() {
    // abstract
   }
+
+  /**
+   * @returns {cwua.BrowserInfo}
+   */
+  get browser() {
+   // abstract
+  }
 }
 
 class AppleDeviceInfo extends DeviceInfo {
@@ -131,6 +138,19 @@ class AppleDeviceInfo extends DeviceInfo {
       version: version
     };
   }
+
+  /**
+   * @returns {cwua.BrowserInfo}
+   */
+  get browser() {
+    const version = this.ua.match(/\bAppleWebKit\/.*?Version\/([\d\.]+)\s/)[1];
+
+    return {
+      name:    'Mobile Safari',
+      version: version,
+      major:   parseInt(version.split('.')[0], 10)
+    };
+  }
 }
 
 class AndroidDeviceInfo extends DeviceInfo {
@@ -177,6 +197,19 @@ class AndroidDeviceInfo extends DeviceInfo {
     return {
       name:    'WebKit',
       version: version
+    };
+  }
+
+  /**
+   * @returns {cwua.BrowserInfo}
+   */
+  get browser() {
+    const version = this.ua.match(/\bChrome\/([\d\.]+)\s/)[1];
+
+    return {
+      name:    'Chrome',
+      version: version,
+      major:   parseInt(version.split('.')[0], 10)
     };
   }
 }
