@@ -63,17 +63,10 @@ class DeviceInfo {
   }
 
   /**
-   * @returns {string}
+   * @returns {cwua.BrowserInfo}
    */
-  get device() {
-    // abstract
-  }
-
-  /**
-   * @returns {cwua.OsInfo}
-   */
-  get os() {
-    // abstract
+  get browser() {
+   // abstract
   }
 
   /**
@@ -84,10 +77,17 @@ class DeviceInfo {
   }
 
   /**
-   * @returns {cwua.BrowserInfo}
+   * @returns {cwua.OsInfo}
    */
-  get browser() {
-   // abstract
+  get os() {
+    // abstract
+  }
+
+  /**
+   * @returns {string}
+   */
+  get device() {
+    // abstract
   }
 }
 
@@ -97,15 +97,29 @@ class AppleDeviceInfo extends DeviceInfo {
   }
 
   /**
-   * @returns {string}
+   * @returns {cwua.BrowserInfo}
    */
-  /* eslint-disable no-multi-spaces, complexity */
-  get device() {
-    if (match(re.apple.phone,  this.ua)) { return 'iPhone'; }
-    if (match(re.apple.tablet, this.ua)) { return 'iPad'; }
-    if (match(re.apple.iPod,   this.ua)) { return 'iPodTouch'; }
+  get browser() {
+    const version = this.ua.match(/\bAppleWebKit\/.*?Version\/([\d\.]+)\s/)[1];
+
+    return {
+      name:    'Mobile Safari',
+      version: version,
+      major:   parseInt(version.split('.')[0], 10)
+    };
   }
-  /* eslint-enable no-multi-spaces, complexity */
+
+  /**
+   * @returns {cwua.EngineInfo}
+   */
+  get engine() {
+    const version = this.ua.match(/\bAppleWebKit\/(\d+\.\d+(\.\d+)?)/)[1];
+
+    return {
+      name:    'WebKit',
+      version: version
+    };
+  }
 
   /**
    * @returns {cwua.OsInfo}
@@ -128,6 +142,36 @@ class AppleDeviceInfo extends DeviceInfo {
   }
 
   /**
+   * @returns {string}
+   */
+  /* eslint-disable no-multi-spaces, complexity */
+  get device() {
+    if (match(re.apple.phone,  this.ua)) { return 'iPhone'; }
+    if (match(re.apple.tablet, this.ua)) { return 'iPad'; }
+    if (match(re.apple.iPod,   this.ua)) { return 'iPodTouch'; }
+  }
+  /* eslint-enable no-multi-spaces, complexity */
+}
+
+class AndroidDeviceInfo extends DeviceInfo {
+  constructor(ua) {
+    super(ua);
+  }
+
+  /**
+   * @returns {cwua.BrowserInfo}
+   */
+  get browser() {
+    const version = this.ua.match(/\bChrome\/([\d\.]+)\s/)[1];
+
+    return {
+      name:    'Chrome',
+      version: version,
+      major:   parseInt(version.split('.')[0], 10)
+    };
+  }
+
+  /**
    * @returns {cwua.EngineInfo}
    */
   get engine() {
@@ -138,35 +182,6 @@ class AppleDeviceInfo extends DeviceInfo {
       version: version
     };
   }
-
-  /**
-   * @returns {cwua.BrowserInfo}
-   */
-  get browser() {
-    const version = this.ua.match(/\bAppleWebKit\/.*?Version\/([\d\.]+)\s/)[1];
-
-    return {
-      name:    'Mobile Safari',
-      version: version,
-      major:   parseInt(version.split('.')[0], 10)
-    };
-  }
-}
-
-class AndroidDeviceInfo extends DeviceInfo {
-  constructor(ua) {
-    super(ua);
-  }
-
-  /**
-   * @returns {string}
-   */
-  /* eslint-disable no-multi-spaces, complexity */
-  get device() {
-    if (match(re.android.phone,  this.ua)) { return 'phone'; }
-    if (match(re.android.tablet, this.ua)) { return 'tablet'; }
-  }
-  /* eslint-enable no-multi-spaces, complexity */
 
   /**
    * @returns {cwua.OsInfo}
@@ -189,29 +204,14 @@ class AndroidDeviceInfo extends DeviceInfo {
   }
 
   /**
-   * @returns {cwua.EngineInfo}
+   * @returns {string}
    */
-  get engine() {
-    const version = this.ua.match(/\bAppleWebKit\/(\d+\.\d+(\.\d+)?)/)[1];
-
-    return {
-      name:    'WebKit',
-      version: version
-    };
+  /* eslint-disable no-multi-spaces, complexity */
+  get device() {
+    if (match(re.android.phone,  this.ua)) { return 'phone'; }
+    if (match(re.android.tablet, this.ua)) { return 'tablet'; }
   }
-
-  /**
-   * @returns {cwua.BrowserInfo}
-   */
-  get browser() {
-    const version = this.ua.match(/\bChrome\/([\d\.]+)\s/)[1];
-
-    return {
-      name:    'Chrome',
-      version: version,
-      major:   parseInt(version.split('.')[0], 10)
-    };
-  }
+  /* eslint-enable no-multi-spaces, complexity */
 }
 
 export default class Parser {
