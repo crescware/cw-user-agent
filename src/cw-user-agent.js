@@ -70,14 +70,14 @@ class DeviceInfo {
   }
 
   /**
-   * @returns {cwus.OsInfo}
+   * @returns {cwua.OsInfo}
    */
   get os() {
     // abstract
   }
 
   /**
-   * @returns {cwus.EngineInfo}
+   * @returns {cwua.EngineInfo}
    */
   get engine() {
    // abstract
@@ -101,7 +101,7 @@ class AppleDeviceInfo extends DeviceInfo {
   /* eslint-enable no-multi-spaces, complexity */
 
   /**
-   * @returns {cwus.OsInfo}
+   * @returns {cwua.OsInfo}
    */
   get os() {
     const raw = this.ua.match(/(?=\bCPU\b).+?\sOS\s(\d_\d(_\d)?)/)[1];
@@ -121,7 +121,7 @@ class AppleDeviceInfo extends DeviceInfo {
   }
 
   /**
-   * @returns {cwus.EngineInfo}
+   * @returns {cwua.EngineInfo}
    */
   get engine() {
     const version = this.ua.match(/\bAppleWebKit\/(\d+\.\d+(\.\d+)?)/)[1];
@@ -149,7 +149,7 @@ class AndroidDeviceInfo extends DeviceInfo {
   /* eslint-enable no-multi-spaces, complexity */
 
   /**
-   * @returns {cwus.OsInfo}
+   * @returns {cwua.OsInfo}
    */
   get os() {
     const raw = this.ua.match(/\bAndroid\b\s(\d\.\d(\.\d)?);/)[1];
@@ -169,7 +169,7 @@ class AndroidDeviceInfo extends DeviceInfo {
   }
 
   /**
-   * @returns {cwus.EngineInfo}
+   * @returns {cwua.EngineInfo}
    */
   get engine() {
     const version = this.ua.match(/\bAppleWebKit\/(\d+\.\d+(\.\d+)?)/)[1];
