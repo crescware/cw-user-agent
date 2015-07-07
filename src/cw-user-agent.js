@@ -124,8 +124,11 @@ class AppleDeviceInfo extends DeviceInfo {
    * @returns {cwus.EngineInfo}
    */
   get engine() {
+    const version = this.ua.match(/\bAppleWebKit\/(\d+\.\d+(\.\d+)?)/)[1];
+
     return {
-      name: 'WebKit'
+      name:    'WebKit',
+      version: version
     };
   }
 }
@@ -169,8 +172,11 @@ class AndroidDeviceInfo extends DeviceInfo {
    * @returns {cwus.EngineInfo}
    */
   get engine() {
+    const version = this.ua.match(/\bAppleWebKit\/(\d+\.\d+(\.\d+)?)/)[1];
+
     return {
-      name: 'WebKit'
+      name:    'WebKit',
+      version: version
     };
   }
 }
