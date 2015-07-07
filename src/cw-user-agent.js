@@ -162,12 +162,23 @@ class AndroidDeviceInfo extends DeviceInfo {
    * @returns {cwua.BrowserInfo}
    */
   get browser() {
-    const version = this.ua.match(/\bChrome\/([\d\.]+)\s/)[1];
+    const androidBrowser = this.ua.match(/android.+version\/([\d\.]+)\s+(?:mobile\s?safari|safari)/i);
+
+    if (androidBrowser) {
+      const version = androidBrowser[1];
+      return {
+        name:    'Android Browser',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
+
+    const chrome = this.ua.match(/\bChrome\/([\d\.]+)\s/);
 
     return {
       name:    'Chrome',
-      version: version,
-      major:   parseInt(version.split('.')[0], 10)
+      version: chrome[1],
+      major:   parseInt(chrome[1].split('.')[0], 10)
     };
   }
 

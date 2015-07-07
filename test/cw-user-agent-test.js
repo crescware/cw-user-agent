@@ -129,4 +129,20 @@ describe('Use case', () => {
     os:      {name: 'Android', version: '5.1', major: 5, minor: 1, patch: void 0},
     device:  'phone'
   });
+
+  parameterize('INFOBAR A03', {
+    ua:      'Mozilla/5.0 (Linux; Android 4.4.4; KYV33 Build/100.0.2a10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.135 Mobile Safari/537.36',
+    browser: {name: 'Chrome', version: '36.0.1985.135', major: 36},
+    engine:  {name: 'WebKit', version: '537.36'},
+    os:      {name: 'Android', version: '4.4.4', major: 4, minor: 4, patch: 4},
+    device:  'phone'
+  });
+
+  parameterize('INFOBAR A03', {
+    ua:      'Mozilla/5.0 (Linux; U; Android 2.3.4; ja-jp; IS11T Build/FGK400) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
+    browser: {name: 'Android Browser', version: '4.0', major: 4},
+    engine:  {name: 'WebKit', version: '533.1'},
+    os:      {name: 'Android', version: '2.3.4', major: 2, minor: 3, patch: 4},
+    device:  'phone'
+  });
 });
