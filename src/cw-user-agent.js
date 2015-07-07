@@ -5,6 +5,7 @@ export default class Parser {
 
   /**
    * @param {string} ua - user agent
+   * @returns {void}
    */
   setUA(ua) {
     this.ua = ua;
