@@ -97,7 +97,7 @@ class AppleDeviceInfo extends DeviceInfo {
    * @returns {cwus.OsInfo}
    */
   get os() {
-    const raw = this.ua.match(/(?=\bCPU\b).+?\sOS\s(\d_\d(_\d){0,1})/)[1];
+    const raw = this.ua.match(/(?=\bCPU\b).+?\sOS\s(\d_\d(_\d)?)/)[1];
     const verArr = raw.split('_');
 
     const osInfo = {
@@ -133,9 +133,20 @@ class AndroidDeviceInfo extends DeviceInfo {
    * @returns {cwus.OsInfo}
    */
   get os() {
-    return {
-      name: 'Android'
+    const raw = this.ua.match(/\bAndroid\b\s(\d\.\d(\.\d)?);/)[1];
+    const verArr = raw.split('.');
+
+    const osInfo = {
+      name:  'Android',
+      full:  verArr.join('.'),
+      major: parseInt(verArr[0], 10),
+      minor: parseInt(verArr[1], 10)
     };
+    if (verArr[2] !== void 0 && verArr[2] !== null) {
+      osInfo.patch = parseInt(verArr[2], 10);
+    }
+
+    return osInfo;
   }
 }
 
