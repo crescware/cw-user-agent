@@ -145,4 +145,12 @@ describe('Use case', () => {
     os:      {name: 'Android', version: '2.3.4', major: 2, minor: 3, patch: 4},
     device:  'phone'
   });
+
+  parameterize('Windows 8.1 Chrome 37', {
+    ua:      'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36',
+    browser: {name: 'Chrome', version: '37.0.2049.0', major: 37},
+    engine:  {name: 'WebKit', version: '537.36'},
+    os:      {name: 'Windows', version: '8.1', major: 6, minor: 3, patch: void 0},
+    device:  'pc'
+  });
 });
