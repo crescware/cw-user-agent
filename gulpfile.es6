@@ -19,7 +19,7 @@ gulp.task('babel', shell.task([`${bin.babel} ${path.src} --out-dir ${path.lib}`]
 gulp.task('mocha', () => {
   return gulp
     .src(`${path.test}/**/*-test.js`)
-    .pipe(mocha({reporter: 'spec'}))
+    .pipe(mocha({reporter: 'dot'}))
     .on('error', function() { this.emit('end'); });
 });
 gulp.task('watch', ['babel', 'mocha'], () => {
