@@ -75,6 +75,13 @@ class DeviceInfo {
   get os() {
     // abstract
   }
+
+  /**
+   * @returns {cwus.EngineInfo}
+   */
+  get engine() {
+   // abstract
+  }
 }
 
 class AppleDeviceInfo extends DeviceInfo {
@@ -112,6 +119,15 @@ class AppleDeviceInfo extends DeviceInfo {
 
     return osInfo;
   }
+
+  /**
+   * @returns {cwus.EngineInfo}
+   */
+  get engine() {
+    return {
+      name: 'WebKit'
+    };
+  }
 }
 
 class AndroidDeviceInfo extends DeviceInfo {
@@ -147,6 +163,15 @@ class AndroidDeviceInfo extends DeviceInfo {
     }
 
     return osInfo;
+  }
+
+  /**
+   * @returns {cwus.EngineInfo}
+   */
+  get engine() {
+    return {
+      name: 'WebKit'
+    };
   }
 }
 

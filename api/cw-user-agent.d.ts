@@ -17,6 +17,11 @@ declare module cwua {
     minor?: number;
     patch?: number;
   }
+
+  interface EngineInfo {
+    name: string;
+    version: string;
+  }
 }
 
 declare module 'cw-user-agent' {
