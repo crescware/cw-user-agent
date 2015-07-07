@@ -42,6 +42,14 @@ describe('Use case', () => {
       const info = parser.deviceInfo();
       assert.equal(info.os.name, 'iOS');
     });
+
+    it('os version is 8.0', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.full, '8.0');
+      assert.equal(info.os.major, '8');
+      assert.equal(info.os.minor, '0');
+      assert.equal(info.os.patch, void 0);
+    });
   });
 
   describe('iPad iOS 8.0', () => {
@@ -60,6 +68,14 @@ describe('Use case', () => {
       const info = parser.deviceInfo();
       assert.equal(info.os.name, 'iOS');
     });
+
+    it('os version is 8.0', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.full, '8.0');
+      assert.equal(info.os.major, '8');
+      assert.equal(info.os.minor, '0');
+      assert.equal(info.os.patch, void 0);
+    });
   });
 
   describe('iPod touch iOS 8.0', () => {
@@ -77,6 +93,14 @@ describe('Use case', () => {
     it('os.name is iOS', () => {
       const info = parser.deviceInfo();
       assert.equal(info.os.name, 'iOS');
+    });
+
+    it('os version is 8.0', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.full, '8.0');
+      assert.equal(info.os.major, '8');
+      assert.equal(info.os.minor, '0');
+      assert.equal(info.os.patch, void 0);
     });
   });
 

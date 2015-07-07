@@ -55,14 +55,23 @@ class DeviceInfo {
     this.ua = ua;
   }
 
+  /**
+   * @returns {string}
+   */
   get userAgent() {
     return this.ua;
   }
 
+  /**
+   * @returns {string}
+   */
   get device() {
     // abstract
   }
 
+  /**
+   * @returns {cwus.OsInfo}
+   */
   get os() {
     // abstract
   }
@@ -73,6 +82,9 @@ class AppleDeviceInfo extends DeviceInfo {
     super(ua);
   }
 
+  /**
+   * @returns {string}
+   */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
     if (match(re.apple.phone,  this.ua)) { return 'iPhone'; }
@@ -81,10 +93,24 @@ class AppleDeviceInfo extends DeviceInfo {
   }
   /* eslint-enable no-multi-spaces, complexity */
 
+  /**
+   * @returns {cwus.OsInfo}
+   */
   get os() {
-    return {
-      name: 'iOS'
+    const raw = this.ua.match(/(?=\bCPU\b).+?\sOS\s(\d_\d(_\d){0,1})/)[1];
+    const verArr = raw.split('_');
+
+    const osInfo = {
+      name:  'iOS',
+      full:  verArr.join('.'),
+      major: parseInt(verArr[0], 10),
+      minor: parseInt(verArr[1], 10)
     };
+    if (verArr[2] !== void 0 && verArr[2] !== null) {
+      osInfo.patch = parseInt(verArr[2], 10);
+    }
+
+    return osInfo;
   }
 }
 
@@ -93,6 +119,9 @@ class AndroidDeviceInfo extends DeviceInfo {
     super(ua);
   }
 
+  /**
+   * @returns {string}
+   */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
     if (match(re.android.phone,  this.ua)) { return 'phone'; }
@@ -100,13 +129,15 @@ class AndroidDeviceInfo extends DeviceInfo {
   }
   /* eslint-enable no-multi-spaces, complexity */
 
+  /**
+   * @returns {cwus.OsInfo}
+   */
   get os() {
     return {
       name: 'Android'
     };
   }
 }
-
 
 export default class Parser {
   constructor() {

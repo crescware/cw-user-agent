@@ -7,6 +7,15 @@ declare module cwua {
   interface DeviceInfo {
     userAgent: string;
     device: string;
+    os: OsInfo;
+  }
+
+  interface OsInfo {
+    name: string;
+    full: string;
+    major?: number;
+    minor?: number;
+    patch?: number;
   }
 }
 
