@@ -104,4 +104,18 @@ describe('Use case', () => {
     os:     {name: 'Android', version: '5.0.2', major: 5, minor: 0, patch: 2},
     engine: {name: 'WebKit', version: '537.36'}
   });
+
+  parameterize('Xperia Z4 SOV31 / Browser', {
+    ua:     'Mozilla/5.0 (Linux; Android 5.0.2; SOV31 Build/28.0.D.0.404) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 Mobile Safari/537.36',
+    device: 'phone',
+    os:     {name: 'Android', version: '5.0.2', major: 5, minor: 0, patch: 2},
+    engine: {name: 'WebKit', version: '537.36'}
+  });
+
+  parameterize('URBANO V02 / Browser', {
+    ua:     'Mozilla/5.0 (Linux; Android 5.1; KYV34 Build/xxxx) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36',
+    device: 'phone',
+    os:     {name: 'Android', version: '5.1', major: 5, minor: 1, patch: void 0},
+    engine: {name: 'WebKit', version: '537.36'}
+  });
 });
