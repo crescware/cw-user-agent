@@ -27,6 +27,71 @@ function match(regex, userAgent) {
   return regex.test(userAgent);
 }
 
+/**
+ * @param {string} userAgent
+ * @returns {boolean}
+ */
+function isApple(userAgent) {
+  return match(re.apple.phone, userAgent)
+    || match(re.apple.tablet, userAgent)
+    || match(re.apple.iPod, userAgent);
+}
+
+/**
+ * @param {string} userAgent
+ * @returns {boolean}
+ */
+function isAndroid(userAgent) {
+  return match(re.android.phone, userAgent)
+    || match(re.android.tablet, userAgent);
+}
+
+class DeviceInfo {
+  /**
+   * @constructor
+   * @param {string} ua - user agent
+   */
+  constructor(ua) {
+    this.ua = ua;
+  }
+
+  get userAgent() {
+    return this.ua;
+  }
+
+  get device() {
+    // abstract
+  }
+}
+
+class AppleDeviceInfo extends DeviceInfo {
+  constructor(ua) {
+    super(ua);
+  }
+
+  /* eslint-disable no-multi-spaces, complexity */
+  get device() {
+    if (match(re.apple.phone,  this.ua)) { return 'iPhone'; }
+    if (match(re.apple.tablet, this.ua)) { return 'iPad'; }
+    if (match(re.apple.iPod,   this.ua)) { return 'iPodTouch'; }
+  }
+  /* eslint-enable no-multi-spaces, complexity */
+}
+
+class AndroidDeviceInfo extends DeviceInfo {
+  constructor(ua) {
+    super(ua);
+  }
+
+  /* eslint-disable no-multi-spaces, complexity */
+  get device() {
+    if (match(re.android.phone,  this.ua)) { return 'phone'; }
+    if (match(re.android.tablet, this.ua)) { return 'tablet'; }
+  }
+  /* eslint-enable no-multi-spaces, complexity */
+}
+
+
 export default class Parser {
   constructor() {
     // noop
@@ -44,22 +109,12 @@ export default class Parser {
    * @returns {cwua.DeviceInfo}
    */
   deviceInfo() {
-    return {
-      userAgent: this.ua,
-      device:    this.parseDevice()
-    };
+    if (isApple(this.ua)) {
+      return new AppleDeviceInfo(this.ua);
+    }
+    if (isAndroid(this.ua)) {
+      return new AndroidDeviceInfo(this.ua);
+    }
+    return new DeviceInfo(this.ua);
   }
-
-  /* eslint-disable no-multi-spaces */
-  /**
-   * @returns {string}
-   */
-  parseDevice() {
-    if (match(re.apple.phone,    this.ua)) { return 'iPhone'; }
-    if (match(re.apple.tablet,   this.ua)) { return 'iPad'; }
-    if (match(re.apple.iPod,     this.ua)) { return 'iPodTouch'; }
-    if (match(re.android.phone,  this.ua)) { return 'phone'; }
-    if (match(re.android.tablet, this.ua)) { return 'tablet'; }
-  }
-  /* eslint-enable no-multi-spaces */
 }
