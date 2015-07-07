@@ -62,6 +62,10 @@ class DeviceInfo {
   get device() {
     // abstract
   }
+
+  get os() {
+    // abstract
+  }
 }
 
 class AppleDeviceInfo extends DeviceInfo {
@@ -76,6 +80,12 @@ class AppleDeviceInfo extends DeviceInfo {
     if (match(re.apple.iPod,   this.ua)) { return 'iPodTouch'; }
   }
   /* eslint-enable no-multi-spaces, complexity */
+
+  get os() {
+    return {
+      name: 'iOS'
+    };
+  }
 }
 
 class AndroidDeviceInfo extends DeviceInfo {
@@ -89,6 +99,12 @@ class AndroidDeviceInfo extends DeviceInfo {
     if (match(re.android.tablet, this.ua)) { return 'tablet'; }
   }
   /* eslint-enable no-multi-spaces, complexity */
+
+  get os() {
+    return {
+      name: 'Android'
+    };
+  }
 }
 
 

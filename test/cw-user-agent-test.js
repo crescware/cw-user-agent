@@ -37,6 +37,11 @@ describe('Use case', () => {
       const info = parser.deviceInfo();
       assert.equal(info.device, 'iPhone');
     });
+
+    it('os.name is iOS', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.name, 'iOS');
+    });
   });
 
   describe('iPad iOS 8.0', () => {
@@ -50,6 +55,11 @@ describe('Use case', () => {
       const info = parser.deviceInfo();
       assert.equal(info.device, 'iPad');
     });
+
+    it('os.name is iOS', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.name, 'iOS');
+    });
   });
 
   describe('iPod touch iOS 8.0', () => {
@@ -59,9 +69,14 @@ describe('Use case', () => {
       parser.setUA('Mozilla/5.0 (iPod touch; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A365 Safari/600.1.4');
     });
 
-    it('device is iPod touch', () => {
+    it('device is iPodTouch', () => {
       const info = parser.deviceInfo();
       assert.equal(info.device, 'iPodTouch');
+    });
+
+    it('os.name is iOS', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.name, 'iOS');
     });
   });
 
@@ -76,6 +91,11 @@ describe('Use case', () => {
       const info = parser.deviceInfo();
       assert.equal(info.device, 'phone');
     });
+
+    it('os.name is Android', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.name, 'Android');
+    });
   });
 
   describe('Xperia Z4 Tablet SOT31 / Browser', () => {
@@ -88,6 +108,11 @@ describe('Use case', () => {
     it('device is tablet', () => {
       const info = parser.deviceInfo();
       assert.equal(info.device, 'tablet');
+    });
+
+    it('os.name is Android', () => {
+      const info = parser.deviceInfo();
+      assert.equal(info.os.name, 'Android');
     });
   });
 });
