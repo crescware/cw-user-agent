@@ -6,6 +6,7 @@ declare module cwua {
 
   interface DeviceInfo {
     userAgent: string;
+    device: string;
   }
 }
 

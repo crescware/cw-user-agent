@@ -1,8 +1,8 @@
 const re = {
   apple: {
-    phone:  /iPhone/i,
-    iPod:   /iPod/i,
-    tablet: /iPad/i
+    iPod:   /iPod touch;/i,
+    phone:  /iPhone;/i,
+    tablet: /iPad;/i
   },
   android: {
     phone:  /(?=.*\bAndroid\b)(?=.*\bMobile\b)/i,
@@ -17,6 +17,15 @@ const re = {
   operaMini:     /Opera Mini/i,
   firefoxMobile: /(?=.*\bFirefox\b)(?=.*\bMobile\b)/i
 };
+
+/**
+ * @param {RegExp} regex
+ * @param {string} userAgent
+ * @returns {boolean}
+ */
+function match(regex, userAgent) {
+  return regex.test(userAgent);
+}
 
 export default class Parser {
   constructor() {
@@ -36,7 +45,21 @@ export default class Parser {
    */
   deviceInfo() {
     return {
-      userAgent: this.ua
+      userAgent: this.ua,
+      device:    this.parseDevice()
     };
   }
+
+  /* eslint-disable no-multi-spaces */
+  /**
+   * @returns {string}
+   */
+  parseDevice() {
+    if (match(re.apple.phone,    this.ua)) { return 'iPhone'; }
+    if (match(re.apple.tablet,   this.ua)) { return 'iPad'; }
+    if (match(re.apple.iPod,     this.ua)) { return 'iPodTouch'; }
+    if (match(re.android.phone,  this.ua)) { return 'phone'; }
+    if (match(re.android.tablet, this.ua)) { return 'tablet'; }
+  }
+  /* eslint-enable no-multi-spaces */
 }
