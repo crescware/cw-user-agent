@@ -12,7 +12,7 @@ declare module cwua {
 
   interface OsInfo {
     name: string;
-    full: string;
+    version: string;
     major?: number;
     minor?: number;
     patch?: number;

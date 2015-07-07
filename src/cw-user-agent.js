@@ -101,10 +101,10 @@ class AppleDeviceInfo extends DeviceInfo {
     const verArr = raw.split('_');
 
     const osInfo = {
-      name:  'iOS',
-      full:  verArr.join('.'),
-      major: parseInt(verArr[0], 10),
-      minor: parseInt(verArr[1], 10)
+      name:    'iOS',
+      version: verArr.join('.'),
+      major:   parseInt(verArr[0], 10),
+      minor:   parseInt(verArr[1], 10)
     };
     if (verArr[2] !== void 0 && verArr[2] !== null) {
       osInfo.patch = parseInt(verArr[2], 10);
@@ -137,10 +137,10 @@ class AndroidDeviceInfo extends DeviceInfo {
     const verArr = raw.split('.');
 
     const osInfo = {
-      name:  'Android',
-      full:  verArr.join('.'),
-      major: parseInt(verArr[0], 10),
-      minor: parseInt(verArr[1], 10)
+      name:    'Android',
+      version: verArr.join('.'),
+      major:   parseInt(verArr[0], 10),
+      minor:   parseInt(verArr[1], 10)
     };
     if (verArr[2] !== void 0 && verArr[2] !== null) {
       osInfo.patch = parseInt(verArr[2], 10);
