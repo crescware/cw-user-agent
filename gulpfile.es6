@@ -6,6 +6,7 @@ import shell from 'gulp-shell';
 
 const path = {
   src:  `./src`,
+  lib:  `./lib`,
   test: `./test`,
   bin:  `./node_modules/.bin`
 };
@@ -14,7 +15,7 @@ const bin = {
   babel: `${path.bin}/babel`
 };
 
-gulp.task('babel', shell.task([`${bin.babel} ${path.src}/**/*.js`]));
+gulp.task('babel', shell.task([`${bin.babel} ${path.src} --out-dir ${path.lib}`]));
 gulp.task('mocha', () => {
   return gulp
     .src(`${path.test}/**/*-test.js`)
