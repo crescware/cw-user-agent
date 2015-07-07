@@ -10,4 +10,13 @@ export default class Parser {
   setUA(ua) {
     this.ua = ua;
   }
+
+  /**
+   * @returns {cwua.DeviceInfo}
+   */
+  deviceInfo() {
+    return {
+      userAgent: this.ua
+    };
+  }
 }
