@@ -6,6 +6,19 @@ import {match} from './match-utils';
 export default class WindowsDeviceInfo extends DeviceInfo {
   constructor(ua) {
     super(ua);
+    this.initXPServicePack();
+  }
+
+  /**
+   * @returns {void}
+   */
+  initXPServicePack() {
+    if (this.os.version === '5.1'/* XP */) {
+      const securityVer = this.ua.match(/\bwindows\snt\b\s.*?;\s(sv\d)?;?/i)[1];
+      if (securityVer === 'SV1') {
+        this.servicePack = 'SP2';
+      }
+    }
   }
 
   /**

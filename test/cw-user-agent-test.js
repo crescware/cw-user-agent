@@ -109,3 +109,17 @@ describe('Use cases', () => {
     specs.forEach(spec => parameterize(spec));
   });
 });
+
+describe('ServicePack', () => {
+  let parser;
+  beforeEach(() => {
+    parser = new Parser();
+  });
+
+  it('should be get SP2', () => {
+    const ua = 'Mozilla/5.0 (Windows; U; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)';
+    parser.setUA(ua);
+    const result = parser.deviceInfo();
+    assert.strictEqual(result.servicePack, 'SP2');
+  });
+});
