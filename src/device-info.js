@@ -18,27 +18,27 @@ export default class DeviceInfo {
    * @returns {cwua.BrowserInfo}
    */
   get browser() {
-   // abstract
+    return {};
   }
 
   /**
    * @returns {cwua.EngineInfo}
    */
   get engine() {
-   // abstract
+    return {};
   }
 
   /**
    * @returns {cwua.OsInfo}
    */
   get os() {
-    // abstract
+    return {};
   }
 
   /**
    * @returns {string}
    */
   get device() {
-    // abstract
+    return {};
   }
 }
