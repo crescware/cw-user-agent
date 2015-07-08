@@ -38,28 +38,32 @@ describe('Parser', () => {
  */
 function parameterize(spec) {
   describe(spec.desc, () => {
-    let parser;
+    let parser, info;
     beforeEach(() => {
       parser = new Parser();
       parser.setUA(spec.ua);
+      info = parser.deviceInfo();
     });
 
-    it(`browser is ${spec.browser.name} ${spec.browser.version}`, () => {
-      const info = parser.deviceInfo();
+    it(`browser is ${spec.browser.name}`, () => {
       assert.strictEqual(info.browser.name, spec.browser.name);
+    });
+
+    it(`browser version is ${spec.browser.version}`, () => {
       assert.strictEqual(info.browser.version, spec.browser.version);
       assert.strictEqual(info.browser.major, spec.browser.major);
     });
 
     it(`engine is ${spec.engine.name} ${spec.engine.version}`, () => {
-      const info = parser.deviceInfo();
       assert.strictEqual(info.engine.name, spec.engine.name);
       assert.strictEqual(info.engine.version, spec.engine.version);
     });
 
-    it(`os version is ${spec.os.name} ${spec.os.version}`, () => {
-      const info = parser.deviceInfo();
+    it(`os name is ${spec.os.name}`, () => {
       assert.strictEqual(info.os.name, spec.os.name);
+    });
+
+    it(`os version is ${spec.os.name} ${spec.os.version}`, () => {
       assert.strictEqual(info.os.version, spec.os.version);
       assert.strictEqual(info.os.major, spec.os.major);
       assert.strictEqual(info.os.minor, spec.os.minor);
@@ -67,7 +71,6 @@ function parameterize(spec) {
     });
 
     it(`device is ${spec.device.type}`, () => {
-      const info = parser.deviceInfo();
       assert.strictEqual(info.device.type, spec.device.type);
     });
   });
