@@ -91,18 +91,18 @@ export default class AppleDeviceInfo extends DeviceInfo {
   /**
    * @returns {string}
    */
-  /* eslint-disable no-multi-spaces, complexity */
   get device() {
+    /* eslint-disable no-multi-spaces, complexity */
     const type = (() => {
       if (match(re.apple.mac,    this.ua)) { return device.pc; }
       if (match(re.apple.phone,  this.ua)) { return device.mobile; }
       if (match(re.apple.tablet, this.ua)) { return device.tablet; }
       if (match(re.apple.iPod,   this.ua)) { return device.mobile; }
     })();
+    /* eslint-enable no-multi-spaces, complexity */
 
     return {
       type: type
     };
   }
-  /* eslint-enable no-multi-spaces, complexity */
 }

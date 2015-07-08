@@ -116,15 +116,15 @@ export default class WindowsDeviceInfo extends DeviceInfo {
   /**
    * @returns {string}
    */
-  /* eslint-disable no-multi-spaces, complexity */
   get device() {
+    /* eslint-disable no-multi-spaces, complexity */
     const type = (() => {
       if (match(re.windows.pc,  this.ua)) { return device.pc; }
     })();
+    /* eslint-enable no-multi-spaces, complexity */
 
     return {
       type: type
     };
   }
-  /* eslint-enable no-multi-spaces, complexity */
 }
