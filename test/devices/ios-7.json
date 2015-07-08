@@ -1,0 +1,69 @@
+[
+  {
+    "desc": "iPhone iOS 7.0",
+    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53",
+    "browser": {
+      "name": "Mobile Safari",
+      "version": "7.0",
+      "major": 7
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.51.1"
+    },
+    "os": {
+      "name": "iOS",
+      "version": "7.0",
+      "major": 7,
+      "minor": 0
+    },
+    "device": {
+      "type": "mobile"
+    }
+  },
+  {
+    "desc": "iPad iOS 7.0",
+    "ua": "Mozilla/5.0 (iPad; CPU OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53",
+    "browser": {
+      "name": "Mobile Safari",
+      "version": "7.0",
+      "major": 7
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.51.1"
+    },
+    "os": {
+      "name": "iOS",
+      "version": "7.0",
+      "major": 7,
+      "minor": 0
+    },
+    "device": {
+      "type": "tablet"
+    }
+  },
+  {
+    "desc": "iPad mini iOS 7.0.4",
+    "ua": "Mozilla/5.0 (iPad; CPU OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B554a Safari/9537.53",
+    "browser": {
+      "name": "Mobile Safari",
+      "version": "7.0",
+      "major": 7
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.51.1"
+    },
+    "os": {
+      "name": "iOS",
+      "version": "7.0.4",
+      "major": 7,
+      "minor": 0,
+      "patch": 4
+    },
+    "device": {
+      "type": "tablet"
+    }
+  }
+]

@@ -117,6 +117,16 @@ describe('Use cases', () => {
     specs.forEach(spec => parameterize(spec));
   });
 
+  describe('iOS 4', () => {
+    const specs = require('./devices/ios-4');
+    specs.forEach(spec => parameterize(spec));
+  });
+
+  describe('iOS 7', () => {
+    const specs = require('./devices/ios-7');
+    specs.forEach(spec => parameterize(spec));
+  });
+
   describe('iOS 8', () => {
     const specs = require('./devices/ios-8');
     specs.forEach(spec => parameterize(spec));
