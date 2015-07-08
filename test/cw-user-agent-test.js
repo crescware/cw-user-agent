@@ -79,6 +79,11 @@ describe('Use cases', () => {
     specs.forEach(spec => parameterize(spec));
   });
 
+  describe('Android 4.1 - 4.3 Jelly Bean', () => {
+    const specs = require('./devices/android-4-1-jellybean');
+    specs.forEach(spec => parameterize(spec));
+  });
+
   describe('Android 4.4 KitKat', () => {
     const specs = require('./devices/android-4-4-kitkat');
     specs.forEach(spec => parameterize(spec));

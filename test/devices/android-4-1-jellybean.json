@@ -1,0 +1,64 @@
+[
+  {
+    "desc": "GALAXY Note 3 SCL22",
+    "ua": "Mozilla/5.0 (Linux; Android 4.3; ja-jp; SCL22 Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36",
+    "browser": {
+      "name": "Chrome",
+      "version": "28.0.1500.94",
+      "major": 28
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.36"
+    },
+    "os": {
+      "name": "Android",
+      "version": "4.3",
+      "major": 4,
+      "minor": 3
+    },
+    "device": "mobile"
+  },
+  {
+    "desc": "AQUOS PHONE SERIE SHL23",
+    "ua": "Mozilla/5.0 (Linux; U; Android 4.2.2; ja-jp; SHL23 Build/SB070) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
+    "browser": {
+      "name": "Android Browser",
+      "version": "4.0",
+      "major": 4
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "534.30"
+    },
+    "os": {
+      "name": "Android",
+      "version": "4.2.2",
+      "major": 4,
+      "minor": 2,
+      "patch": 2
+    },
+    "device": "mobile"
+  },
+  {
+    "desc": "HTC J One HTL22",
+    "ua": "Mozilla/5.0 (Linux; Android 4.1.2; HTL22 Build/JZO54K) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
+    "browser": {
+      "name": "Chrome",
+      "version": "18.0.1025.166",
+      "major": 18
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "535.19"
+    },
+    "os": {
+      "name": "Android",
+      "version": "4.1.2",
+      "major": 4,
+      "minor": 1,
+      "patch": 2
+    },
+    "device": "mobile"
+  }
+]
