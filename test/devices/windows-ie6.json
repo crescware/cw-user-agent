@@ -1,0 +1,23 @@
+[
+  {
+    "desc": "Windows 2000 IE 6",
+    "ua": "Mozilla/4.0 (Windows; MSIE 6.0; Windows NT 5.0)",
+    "browser": {
+      "name": "Internet Explorer",
+      "version": "6.0",
+      "major": 6
+    },
+    "engine": {
+      "name": "Trident"
+    },
+    "os": {
+      "name": "Windows NT",
+      "version": "5.0",
+      "major": 5,
+      "minor": 0
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]

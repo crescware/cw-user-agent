@@ -12,6 +12,17 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    * @returns {cwua.BrowserInfo}
    */
   get browser() {
+    const ie = this.ua.match(/msie\s([\d\.]+);/i);
+
+    if (ie) {
+      const version = ie[1];
+      return {
+        name:    'Internet Explorer',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
+
     const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
 
     return {
@@ -25,6 +36,12 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    * @returns {cwua.EngineInfo}
    */
   get engine() {
+    if (this.browser.name === 'Internet Explorer') {
+      return {
+        name: 'Trident'
+      };
+    }
+
     const webkit = this.ua.match(/\bapplewebKit\/([\d\.]+)/i);
 
     return {
@@ -41,14 +58,9 @@ export default class WindowsDeviceInfo extends DeviceInfo {
     const verArr = raw.split('.');
     const ntVersion = verArr.join('.');
 
-    let productVersion = '';
-    if (ntVersion === '6.3') {
-      productVersion = '8.1';
-    }
-
     const osInfo = {
-      name:    'Windows',
-      version: productVersion,
+      name:    'Windows NT',
+      version: ntVersion,
       major:   parseInt(verArr[0], 10),
       minor:   parseInt(verArr[1], 10)
     };
