@@ -1,4 +1,3 @@
-import re from './regexp';
 import DeviceInfo from './device-info';
 import AppleDeviceInfo from './apple-device-info';
 import AndroidDeviceInfo from './android-device-info';

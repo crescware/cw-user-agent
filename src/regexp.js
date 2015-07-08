@@ -9,7 +9,7 @@ const re = {
     tablet: /Android/i
   },
   windows: {
-    pc: /Windows\sNT/i,
+    pc:     /Windows\sNT/i,
     phone:  /IEMobile/i,
     tablet: /(?=.*\bWindows\b)(?=.*\bARM\b)/i
   },

@@ -1,4 +1,5 @@
 import re from './regexp';
+import {device} from './constants';
 import DeviceInfo from './device-info';
 import {match} from './match-utils';
 
@@ -57,9 +58,9 @@ export default class AppleDeviceInfo extends DeviceInfo {
    */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
-    if (match(re.apple.phone,  this.ua)) { return 'iPhone'; }
-    if (match(re.apple.tablet, this.ua)) { return 'iPad'; }
-    if (match(re.apple.iPod,   this.ua)) { return 'iPodTouch'; }
+    if (match(re.apple.phone,  this.ua)) { return device.mobile; }
+    if (match(re.apple.tablet, this.ua)) { return device.tablet; }
+    if (match(re.apple.iPod,   this.ua)) { return device.mobile; }
   }
   /* eslint-enable no-multi-spaces, complexity */
 }

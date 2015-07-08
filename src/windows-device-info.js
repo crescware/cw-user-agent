@@ -1,4 +1,5 @@
 import re from './regexp';
+import {device} from './constants';
 import DeviceInfo from './device-info';
 import {match} from './match-utils';
 
@@ -63,7 +64,7 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
-    if (match(re.windows.pc,  this.ua)) { return 'pc'; }
+    if (match(re.windows.pc,  this.ua)) { return device.pc; }
   }
   /* eslint-enable no-multi-spaces, complexity */
 }

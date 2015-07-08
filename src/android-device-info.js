@@ -1,4 +1,5 @@
 import re from './regexp';
+import {device} from './constants';
 import DeviceInfo from './device-info';
 import {match} from './match-utils';
 
@@ -68,8 +69,8 @@ export default class AndroidDeviceInfo extends DeviceInfo {
    */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
-    if (match(re.android.phone,  this.ua)) { return 'phone'; }
-    if (match(re.android.tablet, this.ua)) { return 'tablet'; }
+    if (match(re.android.phone,  this.ua)) { return device.mobile; }
+    if (match(re.android.tablet, this.ua)) { return device.tablet; }
   }
   /* eslint-enable no-multi-spaces, complexity */
 }
