@@ -4,7 +4,7 @@
   "description": "User agent parser.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "gulp mocha",
     "watch": "gulp watch"
   },
   "repository": {
