@@ -74,6 +74,11 @@ function parameterize(spec) {
 }
 
 describe('Use cases', () => {
+  describe('Mac Safari', () => {
+    const specs = require('./devices/mac-safari');
+    specs.forEach(spec => parameterize(spec));
+  });
+
   describe('Mac Firefox', () => {
     const specs = require('./devices/mac-firefox');
     specs.forEach(spec => parameterize(spec));

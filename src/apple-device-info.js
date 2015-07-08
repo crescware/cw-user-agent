@@ -16,8 +16,17 @@ export default class AppleDeviceInfo extends DeviceInfo {
   get browser() {
     if (isFirefox(this.ua)) { return firefoxInfo(this.ua); }
 
-    const version = this.ua.match(/\bAppleWebKit\/.*?Version\/([\d\.]+)\s/)[1];
+    const macSafari = this.ua.match(/\bos\sx\s.*?applewebKit.*?version\/([\d\.]+)/i);
+    if (macSafari) {
+      const version = macSafari[1];
+      return {
+        name:    'Safari',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
 
+    const version = this.ua.match(/\bAppleWebKit\/.*?Version\/([\d\.]+)\s/)[1];
     return {
       name:    'Mobile Safari',
       version: version,
@@ -45,9 +54,12 @@ export default class AppleDeviceInfo extends DeviceInfo {
    * @returns {cwua.OsInfo}
    */
   get os() {
-    const macOsX = this.ua.match(/\bos\sx\s([\d\.]+);/i);
+    const macOsX = this.ua.match(/\bos\sx\s([\d\.\_]+);?/i);
     if (macOsX) {
-      const verArr = macOsX[1].split('.');
+      const verArr = ((str) => {
+        return /_/.test(str) ? str.split('_') : str.split('.');
+      })(macOsX[1]);
+
       const osInfo = {
         name:    'Mac OS X',
         version: verArr.join('.'),

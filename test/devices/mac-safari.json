@@ -1,0 +1,25 @@
+[
+  {
+    "desc": "OS X 10.10 Safari 8",
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/600.6.3 (KHTML, like Gecko) Version/8.0.6 Safari/600.6.3",
+    "browser": {
+      "name": "Safari",
+      "version": "8.0.6",
+      "major": 8
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "600.6.3"
+    },
+    "os": {
+      "name": "Mac OS X",
+      "version": "10.10.3",
+      "major": 10,
+      "minor": 10,
+      "patch": 3
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]
