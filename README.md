@@ -1,7 +1,15 @@
 # cw-user-agent
+
 User agent parser.
 
+## Install
+
+```
+npm install cw-user-agent
+```
+
 ## Usage
+
 Please refer to tests.
 
 ## TODO
