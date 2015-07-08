@@ -14,7 +14,8 @@ export function match(regex, userAgent) {
  * @returns {boolean}
  */
 export function isApple(userAgent) {
-  return match(re.apple.phone, userAgent)
+  return match(re.apple.mac, userAgent)
+    || match(re.apple.phone, userAgent)
     || match(re.apple.tablet, userAgent)
     || match(re.apple.iPod, userAgent);
 }

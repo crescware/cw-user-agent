@@ -2,6 +2,7 @@ import re from './regexp';
 import {device} from './constants';
 import DeviceInfo from './device-info';
 import {match} from './match-utils';
+import {parseEngine} from './engine-parser';
 
 export default class WindowsDeviceInfo extends DeviceInfo {
   constructor(ua) {
@@ -81,16 +82,7 @@ export default class WindowsDeviceInfo extends DeviceInfo {
     }
 
     if (this.browser.name === 'Firefox') {
-      const gecko = this.ua.match(/rv:([\d\.]+).*\sgecko/i);
-      const engineInfo = {
-        name: 'Gecko'
-      };
-
-      if (gecko) {
-        engineInfo.version = gecko[1];
-      }
-
-      return engineInfo;
+      return parseEngine(this.ua);
     }
 
     const webkit = this.ua.match(/\bapplewebKit\/([\d\.]+)/i);

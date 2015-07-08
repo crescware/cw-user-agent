@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "OS X 10.10 Firefox 39",
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0",
+    "browser": {
+      "name": "Firefox",
+      "version": "39.0",
+      "major": 39
+    },
+    "engine": {
+      "name": "Gecko",
+      "version": "39.0"
+    },
+    "os": {
+      "name": "Mac OS X",
+      "version": "10.10",
+      "major": 10,
+      "minor": 10
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]

@@ -1,5 +1,6 @@
 const re = {
   apple: {
+    mac:    /macintosh;/i,
     iPod:   /iPod touch;/i,
     phone:  /iPhone;/i,
     tablet: /iPad;/i
