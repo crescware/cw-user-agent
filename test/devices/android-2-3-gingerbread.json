@@ -18,6 +18,8 @@
       "minor": 3,
       "patch": 7
     },
-    "device": "mobile"
+    "device": {
+      "type": "mobile"
+    }
   }
 ]

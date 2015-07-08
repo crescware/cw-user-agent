@@ -9,7 +9,7 @@ declare module cwua {
     browser: BrowserInfo;
     engine: EngineInfo;
     os: OsInfo;
-    device: string;
+    device: DeviceDetailInfo;
   }
 
   interface BrowserInfo {
@@ -29,6 +29,12 @@ declare module cwua {
     major: number;
     minor?: number;
     patch?: number;
+  }
+
+  interface DeviceDetailInfo {
+    type: string;
+    developer?: string; // not supported in 0.1.x
+    name?: string; // not supported in 0.1.x
   }
 }
 

@@ -18,7 +18,9 @@
       "minor": 0,
       "patch": 4
     },
-    "device": "tablet"
+    "device": {
+      "type": "tablet"
+    }
   },
   {
     "desc": "GALAXY SIII Progre SCL21",
@@ -39,6 +41,8 @@
       "minor": 0,
       "patch": 4
     },
-    "device": "mobile"
+    "device": {
+      "type": "mobile"
+    }
   }
 ]

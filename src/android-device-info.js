@@ -69,8 +69,14 @@ export default class AndroidDeviceInfo extends DeviceInfo {
    */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
-    if (match(re.android.phone,  this.ua)) { return device.mobile; }
-    if (match(re.android.tablet, this.ua)) { return device.tablet; }
+    const type = (() => {
+      if (match(re.android.phone,  this.ua)) { return device.mobile; }
+      if (match(re.android.tablet, this.ua)) { return device.tablet; }
+    })();
+
+    return {
+      type: type
+    };
   }
   /* eslint-enable no-multi-spaces, complexity */
 }

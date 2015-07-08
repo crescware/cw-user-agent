@@ -64,7 +64,13 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    */
   /* eslint-disable no-multi-spaces, complexity */
   get device() {
-    if (match(re.windows.pc,  this.ua)) { return device.pc; }
+    const type = (() => {
+      if (match(re.windows.pc,  this.ua)) { return device.pc; }
+    })();
+
+    return {
+      type: type
+    };
   }
   /* eslint-enable no-multi-spaces, complexity */
 }

@@ -18,7 +18,9 @@
       "minor": 4,
       "patch": 4
     },
-    "device": "mobile"
+    "device": {
+      "type": "mobile"
+    }
   },
   {
     "desc": "AQUOS SERIE mini SHV31",
@@ -39,7 +41,9 @@
       "minor": 4,
       "patch": 4
     },
-    "device": "mobile"
+    "device": {
+      "type": "mobile"
+    }
   },
   {
     "desc": "isai VL LGV31",
@@ -60,7 +64,9 @@
       "minor": 4,
       "patch": 2
     },
-    "device": "mobile"
+    "device": {
+      "type": "mobile"
+    }
   },
   {
     "desc": "Xperia Z2 Tablet SOT21",
@@ -81,6 +87,8 @@
       "minor": 4,
       "patch": 2
     },
-    "device": "tablet"
+    "device": {
+      "type": "tablet"
+    }
   }
 ]

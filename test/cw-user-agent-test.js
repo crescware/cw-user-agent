@@ -66,9 +66,9 @@ function parameterize(spec) {
       assert.strictEqual(info.os.patch, spec.os.patch);
     });
 
-    it(`device is ${spec.device}`, () => {
+    it(`device is ${spec.device.type}`, () => {
       const info = parser.deviceInfo();
-      assert.strictEqual(info.device, spec.device);
+      assert.strictEqual(info.device.type, spec.device.type);
     });
   });
 }
