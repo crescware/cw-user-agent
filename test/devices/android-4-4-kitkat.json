@@ -113,5 +113,73 @@
     "device": {
       "type": "mobile"
     }
+  },
+  {
+    "desc": "Google Nexus 4",
+    "ua": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.122 Mobile Safari/537.36",
+    "browser": {
+      "name": "Chrome",
+      "version": "35.0.1916.122",
+      "major": 35
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.36"
+    },
+    "os": {
+      "name": "Android",
+      "version": "4.4.2",
+      "major": 4,
+      "minor": 4,
+      "patch": 2
+    },
+    "device": {
+      "type": "mobile"
+    }
+  },
+  {
+    "desc": "Google Nexus 5",
+    "ua": "Mozilla/5.0 (Linux; Android 4.4.4; Nexus 5 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.114 Mobile Safari/537.36",
+    "browser": {
+      "name": "Chrome",
+      "version": "38.0.2125.114",
+      "major": 38
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.36"
+    },
+    "os": {
+      "name": "Android",
+      "version": "4.4.4",
+      "major": 4,
+      "minor": 4,
+      "patch": 4
+    },
+    "device": {
+      "type": "mobile"
+    }
+  },
+  {
+    "desc": "Google Nexus 7",
+    "ua": "Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JSS15Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2307.2 Safari/537.36",
+    "browser": {
+      "name": "Chrome",
+      "version": "42.0.2307.2",
+      "major": 42
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.36"
+    },
+    "os": {
+      "name": "Android",
+      "version": "4.3",
+      "major": 4,
+      "minor": 3
+    },
+    "device": {
+      "type": "tablet"
+    }
   }
 ]

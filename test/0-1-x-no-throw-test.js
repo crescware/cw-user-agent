@@ -41,6 +41,11 @@ parameterize(
 );
 
 parameterize(
+  '0.1.x does not support Windows Phone',
+  'Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 520)'
+);
+
+parameterize(
   '0.1.x does not support BlackBerry',
   'Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+'
 );
