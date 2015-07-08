@@ -2,7 +2,7 @@ import re from './regexp';
 import {device} from './constants';
 import DeviceInfo from './device-info';
 import {match} from './match-utils';
-import {isFirefox, firefoxInfo} from './browser-parser';
+import {isFirefox, firefoxInfo, isChrome, chromeInfo} from './browser-parser';
 import {parseEngine} from './engine-parser';
 
 export default class AppleDeviceInfo extends DeviceInfo {
@@ -15,22 +15,13 @@ export default class AppleDeviceInfo extends DeviceInfo {
    */
   get browser() {
     if (isFirefox(this.ua)) { return firefoxInfo(this.ua); }
+    if (isChrome(this.ua)) { return chromeInfo(this.ua); }
 
     const macSafari = this.ua.match(/\bos\sx\s.*?applewebKit.*?version\/([\d\.]+)/i);
     if (macSafari) {
       const version = macSafari[1];
       return {
         name:    'Safari',
-        version: version,
-        major:   parseInt(version.split('.')[0], 10)
-      };
-    }
-
-    const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
-    if (chrome) {
-      const version = chrome[1];
-      return {
-        name:    'Chrome',
         version: version,
         major:   parseInt(version.split('.')[0], 10)
       };

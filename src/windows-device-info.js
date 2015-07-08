@@ -2,6 +2,7 @@ import re from './regexp';
 import {device} from './constants';
 import DeviceInfo from './device-info';
 import {match} from './match-utils';
+import {isFirefox, firefoxInfo, isChrome, chromeInfo} from './browser-parser';
 import {parseEngine} from './engine-parser';
 
 export default class WindowsDeviceInfo extends DeviceInfo {
@@ -26,6 +27,9 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    * @returns {cwua.BrowserInfo}
    */
   get browser() {
+    if (isFirefox(this.ua)) { return firefoxInfo(this.ua); }
+    if (isChrome(this.ua)) { return chromeInfo(this.ua); }
+
     const ie = this.ua.match(/msie\s([\d\.]+);/i);
     if (ie) {
       const version = ie[1];
@@ -41,26 +45,6 @@ export default class WindowsDeviceInfo extends DeviceInfo {
       const version = ie11[1];
       return {
         name:    'Internet Explorer',
-        version: version,
-        major:   parseInt(version.split('.')[0], 10)
-      };
-    }
-
-    const firefox = this.ua.match(/\bfirefox\/([\d\.]+)/i);
-    if (firefox) {
-      const version = firefox[1];
-      return {
-        name:    'Firefox',
-        version: version,
-        major:   parseInt(version.split('.')[0], 10)
-      };
-    }
-
-    const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
-    if (chrome) {
-      const version = chrome[1];
-      return {
-        name:    'Chrome',
         version: version,
         major:   parseInt(version.split('.')[0], 10)
       };
