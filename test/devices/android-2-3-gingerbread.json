@@ -1,0 +1,23 @@
+[
+  {
+    "desc": "XPERIA acro HD IS12S",
+    "ua": "Mozilla/5.0 (Linux; U; Android 2.3.7; ja-jp; SonyEricssonIS12S Build/6.0.D.0.270) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
+    "browser": {
+      "name": "Android Browser",
+      "version": "4.0",
+      "major": 4
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "533.1"
+    },
+    "os": {
+      "name": "Android",
+      "version": "2.3.7",
+      "major": 2,
+      "minor": 3,
+      "patch": 7
+    },
+    "device": "mobile"
+  }
+]

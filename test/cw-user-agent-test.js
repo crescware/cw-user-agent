@@ -79,6 +79,11 @@ describe('Use cases', () => {
     specs.forEach(spec => parameterize(spec));
   });
 
+  describe('Android 2.3 Gingerbread', () => {
+    const specs = require('./devices/android-2-3-gingerbread');
+    specs.forEach(spec => parameterize(spec));
+  });
+
   describe('Android 4.0 Ice Cream Sandwich', () => {
     const specs = require('./devices/android-4-0-icecreamsandwich');
     specs.forEach(spec => parameterize(spec));
