@@ -45,8 +45,17 @@ export default class WindowsDeviceInfo extends DeviceInfo {
       };
     }
 
-    const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
+    const firefox = this.ua.match(/\bfirefox\/([\d\.]+)/i);
+    if (firefox) {
+      const version = firefox[1];
+      return {
+        name:    'Firefox',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
 
+    const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
     return {
       name:    'Chrome',
       version: chrome[1],
@@ -71,8 +80,20 @@ export default class WindowsDeviceInfo extends DeviceInfo {
       return engineInfo;
     }
 
-    const webkit = this.ua.match(/\bapplewebKit\/([\d\.]+)/i);
+    if (this.browser.name === 'Firefox') {
+      const gecko = this.ua.match(/rv:([\d\.]+).*\sgecko/i);
+      const engineInfo = {
+        name: 'Gecko'
+      };
 
+      if (gecko) {
+        engineInfo.version = gecko[1];
+      }
+
+      return engineInfo;
+    }
+
+    const webkit = this.ua.match(/\bapplewebKit\/([\d\.]+)/i);
     return {
       name:    'WebKit',
       version: webkit[1]

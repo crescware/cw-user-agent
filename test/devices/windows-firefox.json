@@ -1,0 +1,46 @@
+[
+  {
+    "desc": "Windows 8 Firefox 23",
+    "ua": "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0",
+    "browser": {
+      "name": "Firefox",
+      "version": "23.0",
+      "major": 23
+    },
+    "engine": {
+      "name": "Gecko",
+      "version": "23.0"
+    },
+    "os": {
+      "name": "Windows NT",
+      "version": "6.2",
+      "major": 6,
+      "minor": 2
+    },
+    "device": {
+      "type": "pc"
+    }
+  },
+  {
+    "desc": "Windows 8.1 Firefox 39",
+    "ua": "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0",
+    "browser": {
+      "name": "Firefox",
+      "version": "39.0",
+      "major": 39
+    },
+    "engine": {
+      "name": "Gecko",
+      "version": "39.0"
+    },
+    "os": {
+      "name": "Windows NT",
+      "version": "6.3",
+      "major": 6,
+      "minor": 3
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]

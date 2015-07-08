@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "Windows 8.1 Chrome 43",
+    "ua": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.132 Safari/537.36",
+    "browser": {
+      "name": "Chrome",
+      "version": "43.0.2357.132",
+      "major": 43
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.36"
+    },
+    "os": {
+      "name": "Windows NT",
+      "version": "6.3",
+      "major": 6,
+      "minor": 3
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]
