@@ -28,6 +28,6 @@ gulp.task('watch', ['babel', 'mocha'], () => {
     .on('error', err => process.exit(1));
 
   gulp
-    .watch([`${path.src}/**/*.js`, `${path.test}/**/*-test.js`], ['mocha'])
+    .watch([`${path.src}/**/*.js`, `${path.test}/**/*-test.js`, `${path.test}/**/*.json`], ['mocha'])
     .on('error', err => process.exit(1));
 });
