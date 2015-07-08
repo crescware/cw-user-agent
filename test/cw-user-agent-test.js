@@ -79,6 +79,16 @@ describe('Use cases', () => {
     specs.forEach(spec => parameterize(spec));
   });
 
+  describe('Windows Internet Explorer 10', () => {
+    const specs = require('./devices/windows-ie10');
+    specs.forEach(spec => parameterize(spec));
+  });
+
+  describe('Windows Internet Explorer 11', () => {
+    const specs = require('./devices/windows-ie11');
+    specs.forEach(spec => parameterize(spec));
+  });
+
   describe('iOS 8', () => {
     const specs = require('./devices/ios-8');
     specs.forEach(spec => parameterize(spec));

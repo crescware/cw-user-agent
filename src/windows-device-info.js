@@ -26,9 +26,18 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    */
   get browser() {
     const ie = this.ua.match(/msie\s([\d\.]+);/i);
-
     if (ie) {
       const version = ie[1];
+      return {
+        name:    'Internet Explorer',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
+
+    const ie11 = this.ua.match(/trident.+rv[:\s]([\d\.]+).+like\sgecko/i);
+    if (ie11) {
+      const version = ie11[1];
       return {
         name:    'Internet Explorer',
         version: version,
@@ -50,9 +59,16 @@ export default class WindowsDeviceInfo extends DeviceInfo {
    */
   get engine() {
     if (this.browser.name === 'Internet Explorer') {
-      return {
+      const trident = this.ua.match(/\btrident\/([\d\.]+)/i);
+      const engineInfo = {
         name: 'Trident'
       };
+
+      if (trident) {
+        engineInfo.version = trident[1];
+      }
+
+      return engineInfo;
     }
 
     const webkit = this.ua.match(/\bapplewebKit\/([\d\.]+)/i);

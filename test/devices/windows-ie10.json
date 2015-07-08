@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "Windows 8 IE 10",
+    "ua": "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0)",
+    "browser": {
+      "name": "Internet Explorer",
+      "version": "10.0",
+      "major": 10
+    },
+    "engine": {
+      "name": "Trident",
+      "version": "6.0"
+    },
+    "os": {
+      "name": "Windows NT",
+      "version": "6.2",
+      "major": 6,
+      "minor": 2
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]

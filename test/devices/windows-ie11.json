@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "Windows 8 IE 11",
+    "ua": "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; NP06; rv:11.0) like Gecko",
+    "browser": {
+      "name": "Internet Explorer",
+      "version": "11.0",
+      "major": 11
+    },
+    "engine": {
+      "name": "Trident",
+      "version": "7.0"
+    },
+    "os": {
+      "name": "Windows NT",
+      "version": "6.1",
+      "major": 6,
+      "minor": 1
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]
