@@ -57,11 +57,16 @@ export default class WindowsDeviceInfo extends DeviceInfo {
     }
 
     const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
-    return {
-      name:    'Chrome',
-      version: chrome[1],
-      major:   parseInt(chrome[1].split('.')[0], 10)
-    };
+    if (chrome) {
+      const version = chrome[1];
+      return {
+        name:    'Chrome',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
+
+    return {};
   }
 
   /**

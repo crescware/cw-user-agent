@@ -87,6 +87,11 @@ describe('Use cases', () => {
     specs.forEach(spec => parameterize(spec));
   });
 
+  describe('Mac Chrome', () => {
+    const specs = require('./devices/mac-chrome');
+    specs.forEach(spec => parameterize(spec));
+  });
+
   describe('Windows Internet Explorer 6', () => {
     const specs = require('./devices/windows-ie6');
     specs.forEach(spec => parameterize(spec));

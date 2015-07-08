@@ -26,6 +26,16 @@ export default class AppleDeviceInfo extends DeviceInfo {
       };
     }
 
+    const chrome = this.ua.match(/\bchrome\/([\d\.]+)\s/i);
+    if (chrome) {
+      const version = chrome[1];
+      return {
+        name:    'Chrome',
+        version: version,
+        major:   parseInt(version.split('.')[0], 10)
+      };
+    }
+
     const version = this.ua.match(/\bAppleWebKit\/.*?Version\/([\d\.]+)\s/)[1];
     return {
       name:    'Mobile Safari',

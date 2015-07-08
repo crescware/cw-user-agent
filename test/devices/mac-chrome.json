@@ -1,0 +1,25 @@
+[
+  {
+    "desc": "OS X 10.10 Chrome 45",
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2450.0 Safari/537.36",
+    "browser": {
+      "name": "Chrome",
+      "version": "45.0.2450.0",
+      "major": 45
+    },
+    "engine": {
+      "name": "WebKit",
+      "version": "537.36"
+    },
+    "os": {
+      "name": "Mac OS X",
+      "version": "10.10.3",
+      "major": 10,
+      "minor": 10,
+      "patch": 3
+    },
+    "device": {
+      "type": "pc"
+    }
+  }
+]
